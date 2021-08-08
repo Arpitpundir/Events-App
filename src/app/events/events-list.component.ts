@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
     <h1>Upcoming Angular Events</h1>
     <hr />
     <event-thumbnail
-      #thumbnail
       [event]="event1"
-      (eventClick)="handleEventClicked($event)"
     ></event-thumbnail>
-    <button class="btn btn-primary (click)=" thumbnail.logFoo()>Hi</button>
-    <div>{{ thumbnail.someProperty() }}</div>
   </div>`,
+  styles: [`.pad-left{
+    margin-left: 10px;
+  }, .well div{
+    color: #0080ff;
+  }`]
 })
 export class EventsListComponent {
   event1 = {
@@ -28,8 +29,4 @@ export class EventsListComponent {
       country: 'England',
     },
   };
-
-  handleEventClicked(data: any) {
-    console.log(data);
-  }
 }
